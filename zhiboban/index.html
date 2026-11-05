@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>直播吧nba官网-直播吧nba官网赛程比分_直播吧nba官网直播入口与数据导航</title>
+<meta name="description" content="直播吧nba官网主题导航页，汇总NBA赛程、比分、直播入口与数据解读，帮助球迷在一个页面理清观赛路线与信息重点，快速找到想看的比赛与栏目。">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230d1420'/%3E%3Ccircle cx='32' cy='32' r='17' fill='none' stroke='%23ff7a1a' stroke-width='4'/%3E%3Cpath d='M15 32h34M32 15v34M20 20c8 6 8 18 0 24M44 20c-8 6-8 18 0 24' fill='none' stroke='%23ff7a1a' stroke-width='3'/%3E%3C/svg%3E">
+<style>
+  :root{
+    --ink:#0d1420;
+    --ink-2:#16202f;
+    --paper:#f4f6f9;
+    --card:#ffffff;
+    --line:#e2e7ee;
+    --text:#1c2734;
+    --muted:#5d6b7d;
+    --accent:#e2561c;
+    --accent-soft:#fff1e8;
+    --blue:#1f4f8c;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei",system-ui,-apple-system,sans-serif;
+    background:var(--paper);
+    color:var(--text);
+    line-height:1.75;
+    font-size:16px;
+  }
+  a{color:var(--blue);text-decoration:none;}
+  a:hover{text-decoration:underline;}
+  img,svg{max-width:100%;display:block;}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 20px;}
+
+  /* Header */
+  .site-header{
+    background:var(--ink);
+    color:#fff;
+    border-bottom:3px solid var(--accent);
+    position:sticky;top:0;z-index:50;
+  }
+  .header-inner{
+    display:flex;align-items:center;justify-content:space-between;
+    gap:16px;padding:12px 20px;max-width:1120px;margin:0 auto;
+    flex-wrap:wrap;
+  }
+  .brand{display:flex;align-items:center;gap:10px;}
+  .brand-mark{width:38px;height:38px;flex:0 0 auto;}
+  .brand-text{
+    font-size:19px;font-weight:700;letter-spacing:.5px;color:#fff;
+    line-height:1.2;
+  }
+  .brand-text small{display:block;font-size:11px;font-weight:400;color:#9fb0c6;letter-spacing:1px;}
+  .nav{display:flex;gap:18px;flex-wrap:wrap;font-size:14px;}
+  .nav a{color:#c9d5e4;}
+  .nav a:hover{color:#fff;text-decoration:none;}
+  .nav a.cta{
+    background:var(--accent);color:#fff;padding:6px 14px;border-radius:6px;font-weight:600;
+  }
+  .nav a.cta:hover{background:#c94813;}
+
+  /* Hero */
+  .hero{
+    background:linear-gradient(160deg,#0d1420 0%,#182537 60%,#1f3047 100%);
+    color:#fff;padding:46px 0 40px;position:relative;overflow:hidden;
+  }
+  .hero::after{
+    content:"";position:absolute;right:-120px;top:-60px;width:420px;height:420px;
+    border-radius:50%;
+    background:radial-gradient(circle,rgba(226,86,28,.35),rgba(226,86,28,0) 68%);
+  }
+  .hero-grid{display:grid;grid-template-columns:1.4fr .9fr;gap:36px;align-items:center;position:relative;z-index:2;}
+  .eyebrow{
+    display:inline-block;font-size:12px;letter-spacing:2px;color:#ffb98f;
+    border:1px solid rgba(255,185,143,.45);padding:3px 10px;border-radius:20px;margin-bottom:14px;
+  }
+  h1{
+    font-size:32px;line-height:1.3;margin:0 0 14px;font-weight:800;letter-spacing:.5px;
+  }
+  .hero p.lead{color:#c3d0e0;font-size:15px;margin:0 0 22px;max-width:560px;}
+  .hero-actions{display:flex;gap:12px;flex-wrap:wrap;}
+  .btn{
+    display:inline-block;padding:10px 20px;border-radius:8px;font-size:14px;font-weight:600;
+  }
+  .btn-primary{background:var(--accent);color:#fff;}
+  .btn-primary:hover{background:#c94813;text-decoration:none;}
+  .btn-ghost{border:1px solid #4b5f79;color:#dbe5f1;}
+  .btn-ghost:hover{border-color:#8fa6c2;text-decoration:none;}
+  .hero-card{
+    background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);
+    border-radius:14px;padding:18px 20px;backdrop-filter:blur(4px);
+  }
+  .hero-card h2{font-size:14px;margin:0 0 12px;color:#ffb98f;letter-spacing:1px;font-weight:600;}
+  .mini-list{list-style:none;margin:0;padding:0;font-size:13.5px;color:#cfdae8;}
+  .mini-list li{display:flex;justify-content:space-between;gap:10px;padding:7px 0;border-bottom:1px dashed rgba(255,255,255,.12);}
+  .mini-list li:last-child{border-bottom:none;}
+  .mini-list b{color:#fff;font-weight:600;}
+
+  /* Section basics */
+  section{padding:44px 0;}
+  .sec-head{margin-bottom:24px;}
+  .sec-head h2{
+    font-size:22px;margin:0 0 8px;color:var(--ink);font-weight:800;
+    display:flex;align-items:center;gap:10px;
+  }
+  .sec-head h2::before{
+    content:"";width:6px;height:22px;background:var(--accent);border-radius:3px;display:inline-block;
+  }
+  .sec-head p{margin:0;color:var(--muted);font-size:14.5px;max-width:760px;}
+
+  /* Quick entries */
+  .quick-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;}
+  .quick-card{
+    background:var(--card);border:1px solid var(--line);border-radius:12px;padding:18px;
+    transition:box-shadow .2s,transform .2s;
+  }
+  .quick-card:hover{box-shadow:0 8px 22px rgba(16,30,50,.09);transform:translateY(-2px);}
+  .quick-card .ico{width:34px;height:34px;margin-bottom:10px;}
+  .quick-card h3{font-size:15.5px;margin:0 0 6px;color:var(--ink);}
+  .quick-card p{margin:0;font-size:13.5px;color:var(--muted);}
+
+  /* Schedule table */
+  .panel{background:var(--card);border:1px solid var(--line);border-radius:12px;overflow:hidden;}
+  .panel-head{
+    display:flex;align-items:center;justify-content:space-between;gap:12px;
+    padding:14px 18px;border-bottom:1px solid var(--line);background:#fbfcfe;flex-wrap:wrap;
+  }
+  .panel-head h3{margin:0;font-size:16px;color:var(--ink);}
+  .tag{font-size:12px;color:var(--accent);background:var(--accent-soft);border-radius:20px;padding:2px 10px;}
+  table{width:100%;border-collapse:collapse;font-size:14px;}
+  th,td{text-align:left;padding:12px 18px;border-bottom:1px solid var(--line);}
+  th{font-size:12.5px;color:var(--muted);font-weight:600;letter-spacing:.5px;background:#fbfcfe;}
+  tr:last-child td{border-bottom:none;}
+  td.match{font-weight:600;color:var(--ink);}
+  .status{font-size:12px;padding:2px 8px;border-radius:12px;background:#eef3fa;color:var(--blue);white-space:nowrap;}
+  .status.live{background:var(--accent-soft);color:var(--accent);}
+
+  /* Data reading */
+  .split{display:grid;grid-template-columns:1.05fr .95fr;gap:24px;align-items:start;}
+  .article-body p{margin:0 0 14px;font-size:15px;color:#2c3a4a;}
+  .article-body h3{font-size:16.5px;margin:20px 0 8px;color:var(--ink);}
+  .article-body h3:first-child{margin-top:0;}
+  .stat-card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:20px;}
+  .stat-card h3{margin:0 0 14px;font-size:15.5px;color:var(--ink);}
+  .stat-row{display:flex;justify-content:space-between;align-items:baseline;padding:9px 0;border-bottom:1px dashed var(--line);font-size:14px;}
+  .stat-row:last-of-type{border-bottom:none;}
+  .stat-row span{color:var(--muted);}
+  .stat-row b{color:var(--accent);font-size:15px;}
+  .note{font-size:12.5px;color:var(--muted);margin-top:12px;line-height:1.65;}
+
+  /* Guide checklist */
+  .guide-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
+  .guide-card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:20px;}
+  .guide-card .num{
+    display:inline-flex;align-items:center;justify-content:center;
+    width:26px;height:26px;border-radius:50%;background:var(--ink);color:#fff;
+    font-size:13px;font-weight:700;margin-bottom:10px;
+  }
+  .guide-card h3{margin:0 0 8px;font-size:15.5px;color:var(--ink);}
+  .guide-card p{margin:0;font-size:13.5px;color:var(--muted);}
+
+  /* FAQ */
+  .faq{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:6px 22px;}
+  details{border-bottom:1px solid var(--line);padding:14px 0;}
+  details:last-child{border-bottom:none;}
+  summary{
+    cursor:pointer;font-weight:600;color:var(--ink);font-size:15px;list-style:none;
+    display:flex;justify-content:space-between;gap:12px;align-items:center;
+  }
+  summary::-webkit-details-marker{display:none;}
+  summary::after{content:"+";color:var(--accent);font-weight:700;font-size:18px;}
+  details[open] summary::after{content:"–";}
+  details p{margin:10px 0 0;font-size:14px;color:#3a4a5c;}
+
+  /* Download + footer */
+  .download-band{
+    background:linear-gradient(120deg,#12202f,#1c3049);
+    border-radius:14px;padding:28px 26px;color:#fff;
+    display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;
+  }
+  .download-band h2{margin:0 0 6px;font-size:19px;}
+  .download-band p{margin:0;font-size:13.5px;color:#b9c8db;max-width:560px;}
+  .btn-disabled{
+    background:#3a4d66;color:#c7d4e4;pointer-events:none;cursor:not-allowed;
+    padding:11px 24px;border-radius:8px;font-size:14px;font-weight:600;display:inline-block;
+  }
+  .site-footer{background:var(--ink);color:#9fb0c6;padding:32px 0 26px;font-size:13px;margin-top:20px;}
+  .footer-grid{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;align-items:flex-start;}
+  .footer-brand{color:#fff;font-weight:700;font-size:15px;margin-bottom:6px;}
+  .footer-links{display:flex;gap:16px;flex-wrap:wrap;}
+  .footer-links a{color:#9fb0c6;}
+  .footer-links a:hover{color:#fff;}
+  .footer-bottom{border-top:1px solid #24354b;margin-top:20px;padding-top:16px;font-size:12px;color:#71829a;}
+
+  @media (max-width:900px){
+    .hero-grid{grid-template-columns:1fr;}
+    .quick-grid{grid-template-columns:repeat(2,1fr);}
+    .split{grid-template-columns:1fr;}
+    .guide-grid{grid-template-columns:1fr;}
+  }
+  @media (max-width:600px){
+    body{font-size:15px;}
+    h1{font-size:25px;}
+    .header-inner{padding:10px 14px;}
+    .brand-text{font-size:16px;}
+    .nav{gap:12px;font-size:13px;}
+    .hero{padding:34px 0 30px;}
+    section{padding:32px 0;}
+    .quick-grid{grid-template-columns:1fr;}
+    th,td{padding:10px 12px;font-size:13px;}
+    .download-band{padding:22px 18px;}
+  }
+</style>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a class="brand" href="#top" aria-label="直播吧nba官网 首页">
+      <svg class="brand-mark" viewBox="0 0 64 64" role="img" aria-label="篮球主题标识">
+        <rect width="64" height="64" rx="14" fill="#ff7a1a"/>
+        <circle cx="32" cy="32" r="17" fill="none" stroke="#0d1420" stroke-width="3.5"/>
+        <path d="M15 32h34M32 15v34M20 20c8 6 8 18 0 24M44 20c-8 6-8 18 0 24" fill="none" stroke="#0d1420" stroke-width="3" stroke-linecap="round"/>
+      </svg>
+      <span class="brand-text">直播吧nba官网<small>NBA 赛程 · 比分 · 直播入口</small></span>
+    </a>
+    <nav class="nav" aria-label="主导航">
+      <a href="#schedule">今日赛程</a>
+      <a href="#reading">数据解读</a>
+      <a href="#guide">观赛指南</a>
+      <a href="#faq">常见问题</a>
+      <a class="cta" href="#schedule">查看比分</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- Hero -->
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="wrap hero-grid">
+      <div>
+        <span class="eyebrow">NBA 观赛信息导航</span>
+        <h1 id="hero-title">直播吧nba官网</h1>
+        <p class="lead">一个页面理清当天 NBA 的比赛去向：先看赛程与比分，再读数据与走势，最后按观赛指南找到自己的入口。直播吧nba官网把分散的赛程表、战报要点和栏目说明放在同一套结构里，减少来回切换。</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#schedule">查看今日赛程与比分</a>
+          <a class="btn btn-ghost" href="#guide">了解观赛路径</a>
+        </div>
+      </div>
+      <aside class="hero-card" aria-label="页面速览">
+        <h2>本页速览</h2>
+        <ul class="mini-list">
+          <li><span>赛程与比分对照</span><b>1 张表</b></li>
+          <li><span>数据解读角度</span><b>3 类</b></li>
+          <li><span>观赛路径建议</span><b>3 步</b></li>
+          <li><span>常见疑问整理</span><b>4 条</b></li>
+        </ul>
+      </aside>
+    </div>
+  </section>
+
+  <!-- Quick entries -->
+  <section aria-labelledby="quick-title">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2 id="quick-title">从这里开始</h2>
+        <p>访问直播吧nba官网主题页的球迷，需求通常集中在四件事：今天谁打、比分多少、直播怎么看、数据怎么读。下面四个入口分别对应其中一项，点击可直达本页对应区域。</p>
+      </div>
+      <div class="quick-grid">
+        <a class="quick-card" href="#schedule">
+          <svg class="ico" viewBox="0 0 32 32" aria-hidden="true"><rect x="4" y="6" width="24" height="21" rx="3" fill="none" stroke="#e2561c" stroke-width="2"/><path d="M4 12h24M11 3v6M21 3v6" stroke="#e2561c" stroke-width="2" stroke-linecap="round"/></svg>
+          <h3>今日赛程表</h3>
+          <p>按开赛时间排列对阵，标注比赛状态，方便先判断哪场值得优先打开。</p>
+        </a>
+        <a class="quick-card" href="#reading">
+          <svg class="ico" viewBox="0 0 32 32" aria-hidden="true"><path d="M5 25V15M12 25V9M19 25V18M26 25V13" stroke="#1f4f8c" stroke-width="2.6" stroke-linecap="round"/></svg>
+          <h3>数据解读</h3>
+          <p>用分节、攻防转换与轮换节奏三个角度，把一场比赛读成可判断的信息。</p>
+        </a>
+        <a class="quick-card" href="#guide">
+          <svg class="ico" viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="11" fill="none" stroke="#e2561c" stroke-width="2"/><path d="M16 10v6l4 3" stroke="#e2561c" stroke-width="2" stroke-linecap="round"/></svg>
+          <h3>观赛路径</h3>
+          <p>从赛前确认到赛后复盘的三步流程，适合第一次系统跟赛季的观众。</p>
+        </a>
+        <a class="quick-card" href="#faq">
+          <svg class="ico" viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="12" fill="none" stroke="#1f4f8c" stroke-width="2"/><path d="M12 12a4 4 0 1 1 5.2 3.8c-1 .4-1.2 1-1.2 2.2M16 23h.01" stroke="#1f4f8c" stroke-width="2.2" stroke-linecap="round"/></svg>
+          <h3>常见问题</h3>
+          <p>关于赛程更新、数据口径与页面内容的边界说明，逐条列出。</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Schedule -->
+  <section id="schedule" aria-labelledby="schedule-title">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2 id="schedule-title">赛程与比分对照</h2>
+        <p>下表为示例结构，用于说明直播吧nba官网类页面的信息组织方式：时间、对阵、状态三列即可覆盖多数观赛判断。实际开赛时间与比分以官方赛事信息为准。</p>
+      </div>
+      <div class="panel">
+        <div class="panel-head">
+          <h3>常规比赛日 · 对阵示例</h3>
+          <span class="tag">示例数据，非实时</span>
+        </div>
+        <table>
+          <thead>
+            <tr><th scope="col">开赛时间</th><th scope="col">对阵</th><th scope="col">状态</th><th scope="col">看点</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>08:00</td>
+              <td class="match">东部客队 vs 东部主队</td>
+              <td><span class="status">未开始</span></td>
+              <td>背靠背第二场，轮换深度受考验</td>
+            </tr>
+            <tr>
+              <td>09:30</td>
+              <td class="match">西部客队 vs 西部主队</td>
+              <td><span class="status live">进行中</span></td>
+              <td>外线手感与篮板保护决定走势</td>
+            </tr>
+            <tr>
+              <td>11:00</td>
+              <td class="match">西部客队 vs 西部主队</td>
+              <td><span class="status">未开始</span></td>
+              <td>两队在分区排名相邻，胜负影响位次</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="note" style="margin-top:12px;">说明：本页不提供实时比分接口，表格用于展示栏目结构与阅读顺序；具体赛程、比分与直播安排请以官方渠道发布的信息为准。</p>
+    </div>
+  </section>
+
+  <!-- Reading -->
+  <section id="reading" aria-labelledby="reading-title">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2 id="reading-title">把比赛读成数据</h2>
+        <p>比分只回答结果，数据回答过程。直播吧nba官网主题页把阅读重点放在三个可验证的观察角度上，帮助观众在赛后复盘中抓住主线，而不是只看最终分差。</p>
+      </div>
+      <div class="split">
+        <div class="article-body">
+          <h3>一、分节走势比总分更有信息量</h3>
+          <p>一场比赛的胜负往往在某一节被拉开。把四节得分拆开看，可以判断是开局压制、第三节发力，还是末节被逆转。总分接近的比赛，分节结构可能完全不同，这就是比分之外需要补读的部分。</p>
+          <h3>二、攻防转换决定节奏归属</h3>
+          <p>快攻得分与失误转化为得分的比例，直接反映哪一方掌握了比赛节奏。当一支球队的转换得分明显偏高，说明对手的退防与失误控制出了问题；这类信息在单纯的技术统计表里不容易一眼看出。</p>
+          <h3>三、轮换深度影响后程体能</h3>
+          <p>替补出场时间与板凳得分，是判断球队后程是否吃力的常用线索。背靠背比赛、连续客场等赛程因素，会让轮换深度的差异被放大。阅读这类数据时，应结合赛程背景，而不是孤立比较单场数字。</p>
+          <p>以上三个角度构成本页的数据阅读框架。它们不替代专业分析，但能让普通观众在打开直播吧nba官网相关内容前，先建立一套自己的观察顺序。</p>
+        </div>
+        <aside class="stat-card" aria-label="数据观察清单">
+          <h3>赛后复盘观察清单</h3>
+          <div class="stat-row"><span>分节得分差</span><b>4 节</b></div>
+          <div class="stat-row"><span>快攻得分</span><b>对比项</b></div>
+          <div class="stat-row"><span>失误转化</span><b>对比项</b></div>
+          <div class="stat-row"><span>板凳得分</span><b>参考项</b></div>
+          <div class="stat-row"><span>赛程背景</span><b>必看项</b></div>
+          <p class="note">清单用于建立阅读顺序，具体数值以官方技术统计为准。不同比赛的信息权重不同，不必逐项等量比较。</p>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- Guide -->
+  <section id="guide" aria-labelledby="guide-title">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2 id="guide-title">三步观赛路径</h2>
+        <p>第一次系统跟一个赛季，容易在信息里迷路。把观赛拆成赛前、赛中、赛后三段，每段只做一件事，直播吧nba官网主题页的内容也能按这个顺序被使用。</p>
+      </div>
+      <div class="guide-grid">
+        <div class="guide-card">
+          <span class="num">1</span>
+          <h3>赛前：确认对阵与时间</h3>
+          <p>先看当天有哪几场、几点开赛、是否有背靠背。把想看的比赛按时间排好，避免错过关键场次。</p>
+        </div>
+        <div class="guide-card">
+          <span class="num">2</span>
+          <h3>赛中：关注节奏变化</h3>
+          <p>不盯总分，盯分差何时被拉开、转换得分是否失衡。节奏一旦反转，比赛走向通常随之改变。</p>
+        </div>
+        <div class="guide-card">
+          <span class="num">3</span>
+          <h3>赛后：按清单复盘</h3>
+          <p>用分节、转换、轮换三项回看，记录一条自己的判断。坚持几周后，读比赛的效率会明显提高。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" aria-labelledby="faq-title">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2 id="faq-title">常见问题</h2>
+        <p>围绕直播吧nba官网主题页的定位与内容边界，整理四个访问者最常提出的问题。</p>
+      </div>
+      <div class="faq">
+        <details open>
+          <summary>这个页面提供实时比分吗？</summary>
+          <p>不提供。本页是主题导航与内容说明页面，赛程表为结构示例，不接入实时数据。需要实时比分与直播，请以官方赛事渠道发布的信息为准。</p>
+        </details>
+        <details>
+          <summary>数据解读部分的数字是统计结果吗？</summary>
+          <p>不是。该部分给出的是观察角度与复盘清单，不含具体球队或球员的统计数据。任何具体数值都应回到官方技术统计核对。</p>
+        </details>
+        <details>
+          <summary>为什么赛程表标注“示例数据”？</summary>
+          <p>因为页面未接入赛事数据源，为避免误读，表格只用于说明栏目结构与阅读顺序。实际对阵、时间与状态会随赛程变化。</p>
+        </details>
+        <details>
+          <summary>如何把本页当作赛季跟读的起点？</summary>
+          <p>建议按“赛前确认—赛中看节奏—赛后复盘”三步使用：先通过赛程区确定场次，再用数据区建立观察顺序，最后用复盘清单记下一条判断。</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- Download -->
+  <section aria-labelledby="download-title">
+    <div class="wrap">
+      <div class="download-band">
+        <div>
+          <h2 id="download-title">下载观赛复盘清单</h2>
+          <p>把赛前确认、赛中节奏、赛后复盘三项整理成一页清单，方便打印或保存在本地。下载入口将在文件就绪后开放。</p>
+        </div>
+        <a class="btn-disabled" href="#" data-download-placeholder="true" aria-disabled="true" tabindex="-1" role="button">下载</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand">直播吧nba官网</div>
+        <p style="margin:0;max-width:420px;">NBA 赛程、比分与数据阅读的主题导航页。本页内容为信息组织示例，具体赛事信息以官方渠道为准。</p>
+      </div>
+      <nav class="footer-links" aria-label="页尾导航">
+        <a href="#schedule">赛程比分</a>
+        <a href="#reading">数据解读</a>
+        <a href="#guide">观赛指南</a>
+        <a href="#faq">常见问题</a>
+      </nav>
+    </div>
+    <div class="footer-bottom">
+      © 直播吧nba官网主题页 · 页面内容仅作观赛信息整理与阅读路径说明，不构成任何赛事预测或结果承诺。
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
