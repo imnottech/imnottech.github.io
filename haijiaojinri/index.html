@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>海角今日回家地址-今日回家地址查询_回家线路_地址发布页</title>
+<meta name="description" content="海角今日回家地址发布页，整理今日可用回家地址、线路说明与访问注意事项，帮助访问者快速找到海角今日回家地址并了解备用线路与常见问题。">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230e2a3a'/%3E%3Cpath d='M32 12 L52 30 H44 V52 H20 V30 H12 Z' fill='%2357d6c4'/%3E%3Ccircle cx='32' cy='38' r='5' fill='%230e2a3a'/%3E%3C/svg%3E">
+<style>
+  :root{
+    --ink:#10222c;
+    --ink-soft:#3c5561;
+    --bg:#f4f7f6;
+    --card:#ffffff;
+    --brand:#0e2a3a;
+    --teal:#1f9c8c;
+    --teal-soft:#e3f4f1;
+    --line:#dbe5e2;
+    --amber:#c8882a;
+    --radius:14px;
+    --shadow:0 8px 24px rgba(16,34,44,.07);
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--ink);
+    font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei",system-ui,-apple-system,sans-serif;
+    line-height:1.75;
+    font-size:16px;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:var(--teal);text-decoration:none}
+  a:hover{text-decoration:underline}
+  .wrap{width:min(1120px,92vw);margin:0 auto}
+
+  /* header */
+  header.site{
+    background:var(--brand);
+    color:#eaf4f2;
+    position:sticky;top:0;z-index:20;
+    border-bottom:1px solid rgba(255,255,255,.08);
+  }
+  .bar{display:flex;align-items:center;gap:18px;padding:14px 0;flex-wrap:wrap}
+  .logo{display:flex;align-items:center;gap:10px;font-weight:700;font-size:18px;letter-spacing:.5px;color:#fff}
+  .logo svg{flex:0 0 auto}
+  nav.main{margin-left:auto;display:flex;gap:6px;flex-wrap:wrap}
+  nav.main a{
+    color:#cfe3df;padding:6px 12px;border-radius:8px;font-size:15px;
+  }
+  nav.main a:hover{background:rgba(87,214,196,.16);color:#fff;text-decoration:none}
+  nav.main a.cta{background:var(--teal);color:#062018;font-weight:600}
+  nav.main a.cta:hover{background:#57d6c4;color:#062018}
+
+  /* hero */
+  .hero{
+    background:linear-gradient(160deg,#0e2a3a 0%,#12414d 58%,#14554f 100%);
+    color:#e7f3f0;
+    padding:56px 0 64px;
+    position:relative;
+    overflow:hidden;
+  }
+  .hero::after{
+    content:"";position:absolute;right:-120px;top:-120px;width:420px;height:420px;
+    background:radial-gradient(circle,rgba(87,214,196,.22),transparent 65%);
+    pointer-events:none;
+  }
+  .hero-grid{display:grid;grid-template-columns:1.35fr .85fr;gap:44px;align-items:center;position:relative;z-index:1}
+  .kicker{
+    display:inline-block;font-size:13px;letter-spacing:2px;color:#8fe3d6;
+    border:1px solid rgba(143,227,214,.4);border-radius:999px;padding:3px 12px;margin-bottom:18px;
+  }
+  h1{font-size:clamp(26px,4vw,40px);line-height:1.28;margin:0 0 16px;font-weight:800;letter-spacing:.5px;color:#fff}
+  .hero p.lead{margin:0 0 24px;color:#c3dcd7;font-size:16.5px;max-width:38em}
+  .hero-actions{display:flex;gap:12px;flex-wrap:wrap}
+  .btn{
+    display:inline-flex;align-items:center;gap:8px;
+    padding:11px 22px;border-radius:10px;font-weight:600;font-size:15.5px;
+    border:1px solid transparent;cursor:pointer;
+  }
+  .btn-primary{background:#57d6c4;color:#062018}
+  .btn-primary:hover{background:#7ae4d4;text-decoration:none}
+  .btn-ghost{background:transparent;color:#d7ece8;border-color:rgba(215,236,232,.35)}
+  .btn-ghost:hover{background:rgba(255,255,255,.07);text-decoration:none}
+  .btn[aria-disabled="true"]{opacity:.85;cursor:not-allowed}
+  .hero-figure{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);border-radius:18px;padding:18px}
+  .hero-figure .fig-cap{font-size:12.5px;color:#9dc7c0;margin-top:10px;letter-spacing:.5px}
+
+  /* status strip */
+  .strip{background:#fff;border-bottom:1px solid var(--line)}
+  .strip-inner{display:grid;grid-template-columns:repeat(4,1fr);gap:0;padding:0}
+  .strip-cell{padding:16px 20px;border-right:1px solid var(--line)}
+  .strip-cell:last-child{border-right:none}
+  .strip-cell b{display:block;font-size:15px;color:var(--brand);margin-bottom:2px}
+  .strip-cell span{font-size:13.5px;color:var(--ink-soft)}
+
+  /* sections */
+  section{padding:56px 0}
+  section.alt{background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .sec-head{max-width:44em;margin-bottom:30px}
+  .sec-head h2{font-size:clamp(21px,2.5vw,26px);margin:0 0 10px;color:var(--brand);letter-spacing:.5px}
+  .sec-head p{margin:0;color:var(--ink-soft);font-size:15.5px}
+  .tag{font-size:12.5px;letter-spacing:1.5px;color:var(--teal);font-weight:700;display:block;margin-bottom:8px}
+
+  .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+  .card{
+    background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+    padding:22px;box-shadow:var(--shadow);
+  }
+  .card h3{margin:0 0 8px;font-size:17px;color:var(--brand)}
+  .card p{margin:0;font-size:14.8px;color:var(--ink-soft)}
+  .card .num{
+    display:inline-flex;align-items:center;justify-content:center;
+    width:30px;height:30px;border-radius:9px;background:var(--teal-soft);color:#0f6b60;
+    font-weight:700;font-size:14px;margin-bottom:12px;
+  }
+
+  /* address list */
+  .addr-list{display:grid;gap:12px}
+  .addr-row{
+    display:grid;grid-template-columns:120px 1fr auto;gap:16px;align-items:center;
+    background:#fff;border:1px solid var(--line);border-radius:12px;padding:14px 18px;
+  }
+  .addr-row .line-name{font-weight:700;color:var(--brand);font-size:15px}
+  .addr-row .line-desc{font-size:14.2px;color:var(--ink-soft)}
+  .badge{font-size:12.5px;padding:3px 10px;border-radius:999px;white-space:nowrap}
+  .badge.ok{background:var(--teal-soft);color:#0f6b60}
+  .badge.wait{background:#fbf1e0;color:#96631a}
+
+  /* steps */
+  .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;counter-reset:s}
+  .step{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:20px;position:relative}
+  .step::before{
+    counter-increment:s;content:counter(s);
+    position:absolute;top:-14px;left:20px;width:30px;height:30px;border-radius:50%;
+    background:var(--brand);color:#8fe3d6;display:flex;align-items:center;justify-content:center;
+    font-size:14px;font-weight:700;
+  }
+  .step h3{margin:8px 0 6px;font-size:15.8px;color:var(--brand)}
+  .step p{margin:0;font-size:14.3px;color:var(--ink-soft)}
+
+  /* faq */
+  details.faq{
+    background:#fff;border:1px solid var(--line);border-radius:12px;padding:0;margin-bottom:10px;
+  }
+  details.faq summary{
+    cursor:pointer;padding:15px 20px;font-weight:600;color:var(--brand);font-size:15.5px;
+    list-style:none;display:flex;justify-content:space-between;align-items:center;gap:12px;
+  }
+  details.faq summary::-webkit-details-marker{display:none}
+  details.faq summary::after{content:"+";color:var(--teal);font-size:20px;line-height:1;font-weight:400}
+  details.faq[open] summary::after{content:"–"}
+  details.faq .ans{padding:0 20px 16px;color:var(--ink-soft);font-size:14.8px}
+
+  /* note */
+  .notice{
+    border-left:4px solid var(--amber);background:#fffaf1;border-radius:0 10px 10px 0;
+    padding:16px 20px;font-size:14.6px;color:#6c4d1a;
+  }
+  .notice b{color:#8a5f16}
+
+  /* footer */
+  footer.site{background:var(--brand);color:#a9c6c1;padding:34px 0 26px;margin-top:0}
+  .foot-grid{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;align-items:flex-start}
+  .foot-brand{display:flex;align-items:center;gap:10px;color:#fff;font-weight:700;font-size:17px}
+  footer.site p{margin:8px 0 0;font-size:13.6px;max-width:42em;line-height:1.8}
+  .foot-links{display:flex;gap:18px;flex-wrap:wrap;font-size:14px}
+  .foot-links a{color:#cfe3df}
+  .foot-links a:hover{color:#fff}
+  .copy{border-top:1px solid rgba(255,255,255,.1);margin-top:22px;padding-top:16px;font-size:12.8px;color:#8aa8a3}
+
+  /* mobile */
+  @media (max-width:900px){
+    .hero-grid{grid-template-columns:1fr;gap:30px}
+    .grid-3{grid-template-columns:1fr 1fr}
+    .steps{grid-template-columns:1fr 1fr}
+    .strip-inner{grid-template-columns:1fr 1fr}
+    .strip-cell:nth-child(2){border-right:none}
+    .strip-cell:nth-child(1),.strip-cell:nth-child(2){border-bottom:1px solid var(--line)}
+  }
+  @media (max-width:620px){
+    body{font-size:15.5px}
+    .bar{padding:12px 0;gap:10px}
+    nav.main{margin-left:0;width:100%;gap:4px}
+    nav.main a{padding:5px 10px;font-size:14px}
+    .hero{padding:38px 0 46px}
+    section{padding:40px 0}
+    .grid-3,.steps{grid-template-columns:1fr}
+    .strip-inner{grid-template-columns:1fr 1fr}
+    .addr-row{grid-template-columns:1fr;gap:6px}
+    .foot-grid{flex-direction:column}
+  }
+</style>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap bar">
+    <div class="logo">
+      <svg width="30" height="30" viewBox="0 0 64 64" aria-hidden="true">
+        <rect width="64" height="64" rx="14" fill="#12414d"/>
+        <path d="M32 12 L52 30 H44 V52 H20 V30 H12 Z" fill="#57d6c4"/>
+        <circle cx="32" cy="38" r="5" fill="#12414d"/>
+      </svg>
+      <span>海角今日回家地址</span>
+    </div>
+    <nav class="main" aria-label="主导航">
+      <a href="#address">今日地址</a>
+      <a href="#howto">访问指引</a>
+      <a href="#faq">常见问题</a>
+      <a href="#notice">使用须知</a>
+      <a class="cta" href="#address">查看线路</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <!-- HERO -->
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="wrap hero-grid">
+      <div>
+        <span class="kicker">回家地址 · 发布页</span>
+        <h1 id="hero-title">海角今日回家地址</h1>
+        <p class="lead">这是海角今日回家地址的整理与说明页。页面集中列出今日可用的回家线路、访问步骤与常见问题，方便你在需要时快速确认海角今日回家地址的当前状态，而不必在多个页面之间来回查找。</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#address">查看今日线路</a>
+          <a class="btn btn-ghost" href="#howto">访问步骤说明</a>
+        </div>
+      </div>
+      <div class="hero-figure">
+        <svg viewBox="0 0 340 200" width="100%" role="img" aria-label="回家线路示意插图">
+          <defs>
+            <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#57d6c4" stop-opacity=".9"/>
+              <stop offset="1" stop-color="#1f9c8c" stop-opacity=".35"/>
+            </linearGradient>
+          </defs>
+          <rect x="8" y="8" width="324" height="184" rx="14" fill="none" stroke="rgba(255,255,255,.14)"/>
+          <path d="M42 152 C 96 152, 96 96, 150 96 S 204 40, 258 40" fill="none" stroke="url(#g1)" stroke-width="3" stroke-dasharray="7 6"/>
+          <circle cx="42" cy="152" r="8" fill="#57d6c4"/>
+          <circle cx="150" cy="96" r="6" fill="#8fe3d6"/>
+          <circle cx="258" cy="40" r="8" fill="#57d6c4"/>
+          <path d="M252 40 l4 -10 l4 10 z" fill="#e7f3f0"/>
+          <text x="42" y="180" fill="#9dc7c0" font-size="11">起点</text>
+          <text x="222" y="26" fill="#9dc7c0" font-size="11">回家入口</text>
+          <text x="120" y="120" fill="#7fbcb2" font-size="11">线路选择</text>
+        </svg>
+        <div class="fig-cap">示意图：从入口到回家地址的线路走向</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATUS STRIP -->
+  <div class="strip">
+    <div class="wrap strip-inner">
+      <div class="strip-cell"><b>地址整理</b><span>按线路分组列出</span></div>
+      <div class="strip-cell"><b>访问说明</b><span>分步操作提示</span></div>
+      <div class="strip-cell"><b>备用线路</b><span>作为次选参考</span></div>
+      <div class="strip-cell"><b>问题答疑</b><span>常见访问疑问</span></div>
+    </div>
+  </div>
+
+  <!-- ADDRESS -->
+  <section id="address">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="tag">今日线路</span>
+        <h2>今日可查看的回家线路</h2>
+        <p>下面的列表用于说明海角今日回家地址通常按线路划分的组织方式。每条线路旁标注了当前状态，方便你判断优先尝试哪一条。若某条线路提示等待更新，请以页面静态给出的说明为准，按顺序尝试其他线路。</p>
+      </div>
+      <div class="addr-list">
+        <div class="addr-row">
+          <span class="line-name">线路一</span>
+          <span class="line-desc">主用线路，通常为首选入口；如遇页面加载缓慢，可切换至线路二。</span>
+          <span class="badge ok">可查看</span>
+        </div>
+        <div class="addr-row">
+          <span class="line-name">线路二</span>
+          <span class="line-desc">备用线路，适合主线路访问不畅时使用，说明文字与主线路一致。</span>
+          <span class="badge ok">可查看</span>
+        </div>
+        <div class="addr-row">
+          <span class="line-name">线路三</span>
+          <span class="line-desc">备用线路，更新节奏与主线路同步，建议收藏本页以便随时核对。</span>
+          <span class="badge wait">等待更新</span>
+        </div>
+      </div>
+      <p style="margin-top:18px;font-size:14.4px;color:var(--ink-soft)">提示：线路状态会随整理进度变化，本页只描述整理方式，不承诺任何具体地址长期有效。查找海角今日回家地址时，以本页文字说明和线路顺序作为参考即可。</p>
+    </div>
+  </section>
+
+  <!-- HOWTO -->
+  <section id="howto" class="alt">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="tag">访问指引</span>
+        <h2>查找海角今日回家地址的四个步骤</h2>
+        <p>不少访问者在需要时并不清楚从哪里入手。下面把过程拆成四步，按顺序执行即可，每一步都对应本页的一个区域。</p>
+      </div>
+      <div class="steps">
+        <div class="step">
+          <h3>确认页面</h3>
+          <p>先确认当前打开的是海角今日回家地址的说明页，页头品牌文字与标题一致，避免误入同名页面。</p>
+        </div>
+        <div class="step">
+          <h3>查看线路</h3>
+          <p>在“今日线路”区域核对各线路状态，优先选择标注可查看的线路，再考虑备用线路。</p>
+        </div>
+        <div class="step">
+          <h3>按序尝试</h3>
+          <p>从线路一开始依次尝试，遇到加载缓慢或中断时换下一条，不建议频繁刷新同一地址。</p>
+        </div>
+        <div class="step">
+          <h3>记录与回访</h3>
+          <p>把本页加入书签，下次需要海角今日回家地址时直接回到这里核对最新整理结果。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY / CONTENT -->
+  <section>
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="tag">为什么需要整理页</span>
+        <h2>把地址信息集中到一处</h2>
+        <p>地址类信息分散时，访问者往往要在多个来源之间比对，容易记混或点错。整理页的价值在于把同一主题的信息放在同一条阅读路径上。</p>
+      </div>
+      <div class="grid-3">
+        <div class="card">
+          <span class="num">1</span>
+          <h3>信息集中</h3>
+          <p>线路状态、访问步骤与常见疑问都放在同一页，查找海角今日回家地址时不必反复切换窗口，阅读顺序也更清晰。</p>
+        </div>
+        <div class="card">
+          <span class="num">2</span>
+          <h3>表述克制</h3>
+          <p>页面只描述整理方式和阅读路径，不对线路可用性作超出资料范围的承诺，访问者据此自行判断与尝试。</p>
+        </div>
+        <div class="card">
+          <span class="num">3</span>
+          <h3>便于核对</h3>
+          <p>每条线路都有名称与状态标签，回访时可以直接对照上次记录，减少重复查找与误操作。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="alt">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="tag">常见问题</span>
+        <h2>关于海角今日回家地址的疑问</h2>
+        <p>以下问题来自访问过程中较常出现的困惑，答案只针对本页的整理与说明范围。</p>
+      </div>
+      <details class="faq" open>
+        <summary>本页会直接给出可点击的地址吗？</summary>
+        <div class="ans">本页以说明和整理为主，线路区域描述的是地址的组织方式与状态。页面上不放置未经核实的外部跳转，访问时请以本页文字说明为参考。</div>
+      </details>
+      <details class="faq">
+        <summary>为什么有的线路显示“等待更新”？</summary>
+        <div class="ans">状态标签用于区分线路的整理进度。标注等待更新的线路表示当前说明尚未同步完成，建议先使用标注可查看的线路。</div>
+      </details>
+      <details class="faq">
+        <summary>下次还需要重新搜索吗？</summary>
+        <div class="ans">不需要。把本页加入书签，下次直接打开即可核对海角今日回家地址的整理结果，比重新搜索更省时间，也更容易对照状态变化。</div>
+      </details>
+      <details class="faq">
+        <summary>页面上的下载按钮是做什么的？</summary>
+        <div class="ans">下载入口用于后续提供本页说明的离线版本，目前尚未开放，按钮处于禁用状态，点击不会触发任何动作，请以在线页面为准。</div>
+      </details>
+    </div>
+  </section>
+
+  <!-- NOTICE -->
+  <section id="notice">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="tag">使用须知</span>
+        <h2>访问前请先了解这几点</h2>
+        <p>整理页能降低查找成本，但不能替代访问者自身的判断。以下说明帮助你更稳妥地使用本页信息。</p>
+      </div>
+      <div class="notice">
+        <p><b>状态以页面为准。</b>线路状态随整理进度变化，页面文字反映的是整理时的说明，不构成长期可用性的保证。</p>
+        <p><b>按序尝试，减少反复。</b>遇到加载不畅时优先切换到下一条线路，避免在同一地址上连续刷新，影响判断。</p>
+        <p><b>仅作参考。</b>本页用于整理海角今日回家地址相关信息，请遵守所在地相关法律法规，并根据自身情况判断是否继续访问。</p>
+      </div>
+      <div style="margin-top:22px;display:flex;gap:12px;flex-wrap:wrap">
+        <a class="btn btn-primary" href="#address">回到今日线路</a>
+        <a class="btn btn-ghost" style="color:var(--brand);border-color:var(--line)" href="#notice" data-download-placeholder="true" aria-disabled="true" tabindex="-1">下载</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="foot-brand">
+          <svg width="24" height="24" viewBox="0 0 64 64" aria-hidden="true">
+            <rect width="64" height="64" rx="14" fill="#1f9c8c"/>
+            <path d="M32 12 L52 30 H44 V52 H20 V30 H12 Z" fill="#0e2a3a"/>
+          </svg>
+          海角今日回家地址
+        </div>
+        <p>海角今日回家地址整理与说明页，集中呈现今日线路状态、访问步骤与常见疑问，帮助访问者以更短的路径核对回家地址信息。</p>
+      </div>
+      <div class="foot-links">
+        <a href="#address">今日线路</a>
+        <a href="#howto">访问指引</a>
+        <a href="#faq">常见问题</a>
+        <a href="#notice">使用须知</a>
+      </div>
+    </div>
+    <div class="copy">© 2025 海角今日回家地址 整理页 · 页面内容为信息整理与阅读指引，具体访问请自行判断。</div>
+  </div>
+</footer>
+
+</body>
+</html>
