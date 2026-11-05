@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>51电影院在线观看视频-在线看电影_高清影视资源_免费影院导航</title>
+<meta name="description" content="51电影院在线观看视频是一个影视资源导航主题页面，整理院线新片、经典老片与剧集分类的在线观影入口，提供流畅观看路径、片单筛选与常见问题说明。">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23111827'/%3E%3Ccircle cx='32' cy='32' r='17' fill='none' stroke='%23f5b94b' stroke-width='4'/%3E%3Cpath d='M27 24 L44 32 L27 40 Z' fill='%23f5b94b'/%3E%3C/svg%3E">
+<style>
+  :root{
+    --ink:#141a22;
+    --ink-soft:#41505f;
+    --paper:#f6f3ee;
+    --card:#ffffff;
+    --line:#e2dcd2;
+    --gold:#c8912a;
+    --gold-soft:#f5e7c8;
+    --deep:#16202b;
+    --radius:14px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Noto Sans SC",system-ui,sans-serif;
+    background:var(--paper);
+    color:var(--ink);
+    line-height:1.75;
+    font-size:16px;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:inherit;text-decoration:none;}
+  img,svg{display:block;}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 22px;}
+
+  /* ---------- Header ---------- */
+  header.site{
+    position:sticky;top:0;z-index:40;
+    background:rgba(22,32,43,.96);
+    backdrop-filter:blur(8px);
+    border-bottom:1px solid rgba(245,185,75,.18);
+  }
+  .bar{
+    display:flex;align-items:center;gap:18px;
+    min-height:66px;flex-wrap:wrap;
+    padding-top:8px;padding-bottom:8px;
+  }
+  .brand{display:flex;align-items:center;gap:10px;color:#fff;font-weight:700;font-size:17px;letter-spacing:.5px;}
+  .brand svg{flex:none;}
+  .brand span{white-space:nowrap;}
+  nav.main{margin-left:auto;display:flex;gap:4px;flex-wrap:wrap;}
+  nav.main a{
+    color:#cfd6df;font-size:14.5px;padding:7px 12px;border-radius:8px;
+    transition:background .2s,color .2s;
+  }
+  nav.main a:hover,nav.main a:focus-visible{background:rgba(245,185,75,.16);color:#f5b94b;}
+
+  /* ---------- Hero ---------- */
+  .hero{
+    background:linear-gradient(160deg,#16202b 0%,#1e2b39 55%,#233444 100%);
+    color:#fff;position:relative;overflow:hidden;
+    padding:56px 0 48px;
+  }
+  .hero::after{
+    content:"";position:absolute;right:-90px;top:-90px;width:340px;height:340px;
+    border-radius:50%;background:radial-gradient(circle,rgba(245,185,75,.22),transparent 70%);
+  }
+  .hero-grid{display:grid;grid-template-columns:1.25fr .75fr;gap:38px;align-items:center;position:relative;z-index:2;}
+  .kicker{
+    display:inline-block;font-size:13px;letter-spacing:2px;color:#f5b94b;
+    border:1px solid rgba(245,185,75,.45);border-radius:999px;padding:3px 12px;margin-bottom:16px;
+  }
+  h1{font-size:clamp(25px,3.6vw,38px);line-height:1.32;font-weight:800;letter-spacing:.5px;}
+  .hero p.lead{margin-top:16px;color:#c3ccd6;font-size:15.5px;max-width:36em;}
+  .hero-actions{margin-top:26px;display:flex;gap:12px;flex-wrap:wrap;}
+  .btn{
+    display:inline-flex;align-items:center;gap:8px;border-radius:10px;
+    padding:11px 20px;font-size:15px;font-weight:600;transition:transform .18s,box-shadow .18s,background .18s;
+  }
+  .btn-gold{background:var(--gold);color:#1b1405;}
+  .btn-gold:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(200,145,42,.35);}
+  .btn-ghost{border:1px solid rgba(255,255,255,.28);color:#eef2f6;}
+  .btn-ghost:hover{background:rgba(255,255,255,.08);}
+  .btn[aria-disabled="true"]{opacity:.75;cursor:default;pointer-events:none;}
+  .hero-stats{margin-top:30px;display:flex;gap:26px;flex-wrap:wrap;border-top:1px solid rgba(255,255,255,.12);padding-top:20px;}
+  .hero-stats div{font-size:13px;color:#9fabb8;}
+  .hero-stats strong{display:block;font-size:20px;color:#f5b94b;font-weight:800;line-height:1.3;}
+
+  .screen-card{
+    background:rgba(255,255,255,.05);border:1px solid rgba(245,185,75,.25);
+    border-radius:20px;padding:18px;backdrop-filter:blur(4px);
+  }
+  .screen-card .frame{
+    border-radius:12px;overflow:hidden;background:#0d151d;border:1px solid rgba(255,255,255,.08);
+  }
+  .screen-card .cap{font-size:13px;color:#a9b4c0;margin-top:12px;display:flex;justify-content:space-between;gap:10px;}
+  .screen-card .cap b{color:#f5b94b;font-weight:600;}
+
+  /* ---------- Sections ---------- */
+  section{padding:54px 0;}
+  .sec-head{margin-bottom:26px;}
+  .sec-head h2{font-size:23px;font-weight:800;letter-spacing:.4px;display:flex;align-items:center;gap:10px;}
+  .sec-head h2::before{content:"";width:6px;height:22px;border-radius:3px;background:var(--gold);display:inline-block;}
+  .sec-head p{margin-top:8px;color:var(--ink-soft);font-size:14.5px;max-width:52em;}
+
+  .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;}
+  .grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;}
+
+  .card{
+    background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+    padding:22px;transition:transform .2s,box-shadow .2s,border-color .2s;
+  }
+  .card:hover{transform:translateY(-3px);box-shadow:0 12px 26px rgba(22,32,43,.08);border-color:#d8cbb2;}
+  .card h3{font-size:17px;font-weight:700;margin-bottom:8px;display:flex;align-items:center;gap:8px;}
+  .card h3 .tag{font-size:11.5px;font-weight:600;color:var(--gold);background:var(--gold-soft);border-radius:5px;padding:1px 7px;}
+  .card p{font-size:14.5px;color:var(--ink-soft);}
+  .card ul{margin-top:10px;padding-left:18px;font-size:14.5px;color:var(--ink-soft);}
+  .card ul li{margin-bottom:5px;}
+
+  .icon-badge{
+    width:38px;height:38px;border-radius:10px;background:var(--gold-soft);
+    display:flex;align-items:center;justify-content:center;margin-bottom:12px;
+  }
+
+  /* filter */
+  .filter-box{
+    background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+    padding:18px 20px;display:flex;gap:14px;flex-wrap:wrap;align-items:center;margin-bottom:22px;
+  }
+  .filter-box label{font-size:14px;color:var(--ink-soft);font-weight:600;}
+  .filter-box input,.filter-box select{
+    font-family:inherit;font-size:14.5px;padding:9px 12px;border:1px solid var(--line);
+    border-radius:9px;background:#fbfaf7;color:var(--ink);outline:none;min-width:170px;
+  }
+  .filter-box input:focus,.filter-box select:focus{border-color:var(--gold);box-shadow:0 0 0 3px rgba(200,145,42,.14);}
+  .filter-count{margin-left:auto;font-size:13.5px;color:var(--ink-soft);}
+  .filter-count b{color:var(--gold);}
+
+  /* film list */
+  .film-list{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
+  .film{
+    background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+    overflow:hidden;display:flex;flex-direction:column;
+  }
+  .film .thumb{height:96px;background:linear-gradient(135deg,#1e2b39,#2f4356);display:flex;align-items:center;justify-content:center;}
+  .film .body{padding:15px 16px 18px;}
+  .film h4{font-size:15.5px;font-weight:700;margin-bottom:5px;}
+  .film .meta{font-size:12.5px;color:#8a7a5e;margin-bottom:7px;}
+  .film p{font-size:13.5px;color:var(--ink-soft);line-height:1.65;}
+  .empty{grid-column:1/-1;text-align:center;color:var(--ink-soft);font-size:14.5px;padding:26px 0;}
+
+  /* steps */
+  .steps{counter-reset:s;display:grid;grid-template-columns:repeat(4,1fr);gap:16px;}
+  .step{
+    background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:20px;
+    position:relative;
+  }
+  .step::before{
+    counter-increment:s;content:counter(s,decimal-leading-zero);
+    font-size:13px;font-weight:800;color:var(--gold);letter-spacing:1px;display:block;margin-bottom:8px;
+  }
+  .step h3{font-size:15.5px;font-weight:700;margin-bottom:6px;}
+  .step p{font-size:13.8px;color:var(--ink-soft);}
+
+  /* highlight band */
+  .band{background:var(--deep);color:#e9eef3;border-radius:18px;padding:34px 30px;}
+  .band h2{font-size:21px;font-weight:800;color:#fff;margin-bottom:12px;}
+  .band p{font-size:14.8px;color:#bcc7d2;max-width:58em;}
+  .band .row{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:24px;}
+  .band .row div{font-size:13.8px;color:#a6b2be;}
+  .band .row strong{display:block;color:#f5b94b;font-size:15.5px;margin-bottom:4px;}
+
+  /* faq */
+  details{
+    background:var(--card);border:1px solid var(--line);border-radius:12px;
+    padding:15px 18px;margin-bottom:11px;
+  }
+  details summary{
+    cursor:pointer;font-weight:700;font-size:15px;list-style:none;color:var(--ink);
+    display:flex;justify-content:space-between;gap:12px;align-items:center;
+  }
+  details summary::-webkit-details-marker{display:none;}
+  details summary::after{content:"＋";color:var(--gold);font-weight:700;}
+  details[open] summary::after{content:"－";}
+  details p{margin-top:9px;font-size:14.2px;color:var(--ink-soft);}
+
+  /* footer */
+  footer.site{background:var(--deep);color:#9fabb8;padding:36px 0 26px;font-size:13.8px;}
+  footer.site .frow{display:flex;gap:22px;flex-wrap:wrap;justify-content:space-between;align-items:flex-start;}
+  footer.site .fbrand{color:#fff;font-weight:700;font-size:15.5px;display:flex;align-items:center;gap:9px;margin-bottom:9px;}
+  footer.site a{color:#c3ccd6;}
+  footer.site a:hover{color:#f5b94b;}
+  footer .fnav{display:flex;gap:16px;flex-wrap:wrap;margin-top:6px;}
+  footer .copy{border-top:1px solid rgba(255,255,255,.1);margin-top:24px;padding-top:16px;font-size:12.7px;color:#7c8894;}
+
+  @media(max-width:900px){
+    .hero-grid{grid-template-columns:1fr;}
+    .screen-card{order:2;}
+    .grid-3,.film-list,.steps,.band .row,.grid-2{grid-template-columns:1fr 1fr;}
+  }
+  @media(max-width:640px){
+    body{font-size:15.5px;}
+    .bar{min-height:auto;padding-top:12px;padding-bottom:12px;}
+    nav.main{margin-left:0;width:100%;overflow-x:auto;flex-wrap:nowrap;padding-bottom:2px;}
+    nav.main a{white-space:nowrap;}
+    .hero{padding:38px 0 34px;}
+    .grid-3,.film-list,.steps,.band .row,.grid-2{grid-template-columns:1fr;}
+    .hero-stats{gap:18px;}
+    section{padding:40px 0;}
+    .filter-box input,.filter-box select{width:100%;min-width:0;}
+    .filter-count{margin-left:0;}
+    .band{padding:26px 20px;}
+  }
+</style>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap bar">
+    <a class="brand" href="#top" aria-label="51电影院在线观看视频 首页">
+      <svg width="30" height="30" viewBox="0 0 64 64" aria-hidden="true">
+        <rect width="64" height="64" rx="14" fill="#16202b"/>
+        <circle cx="32" cy="32" r="17" fill="none" stroke="#f5b94b" stroke-width="4"/>
+        <path d="M27 24 L44 32 L27 40 Z" fill="#f5b94b"/>
+      </svg>
+      <span>51电影院在线观看视频</span>
+    </a>
+    <nav class="main" aria-label="主导航">
+      <a href="#guide">观影指南</a>
+      <a href="#library">片单分类</a>
+      <a href="#steps">观看流程</a>
+      <a href="#faq">常见问题</a>
+      <a href="#start">开始观看</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+  <div class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <span class="kicker">主题首页 · 影视资源导航</span>
+        <h1>51电影院在线观看视频</h1>
+        <p class="lead">一个围绕“在线看电影”整理的导航型首页：把院线新片、经典老片与热播剧集的观影入口按类型归档，配合片单筛选与流程说明，让找片、选片、开播三步走得更顺。</p>
+        <div class="hero-actions">
+          <a class="btn btn-gold" href="#library">进入片单分类</a>
+          <a class="btn btn-ghost" href="#guide">先看观影指南</a>
+        </div>
+        <div class="hero-stats">
+          <div><strong>3 类</strong>片单归档维度</div>
+          <div><strong>4 步</strong>标准观看流程</div>
+          <div><strong>6 条</strong>常见问题说明</div>
+        </div>
+      </div>
+      <div class="screen-card">
+        <div class="frame">
+          <svg viewBox="0 0 420 240" width="100%" role="img" aria-label="播放界面示意图">
+            <rect width="420" height="240" fill="#0d151d"/>
+            <rect x="26" y="26" width="368" height="150" rx="10" fill="#16202b" stroke="#2f4356"/>
+            <circle cx="210" cy="101" r="30" fill="none" stroke="#f5b94b" stroke-width="3"/>
+            <path d="M201 87 L228 101 L201 115 Z" fill="#f5b94b"/>
+            <rect x="26" y="192" width="368" height="7" rx="3.5" fill="#243443"/>
+            <rect x="26" y="192" width="132" height="7" rx="3.5" fill="#c8912a"/>
+            <rect x="26" y="210" width="88" height="7" rx="3.5" fill="#2f4356"/>
+            <rect x="128" y="210" width="56" height="7" rx="3.5" fill="#2f4356"/>
+            <rect x="198" y="210" width="42" height="7" rx="3.5" fill="#2f4356"/>
+          </svg>
+        </div>
+        <div class="cap"><span>播放窗口示意</span><b>清晰度 · 线路 · 字幕</b></div>
+      </div>
+    </div>
+  </div>
+
+  <section id="guide">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>观影指南：先弄清你要找什么片</h2>
+        <p>访问“51电影院在线观看视频”这类页面的人，目标通常很直接：找到能看的片子并顺利播放。指南先把需求分成三类，再对应到后面的片单与流程。</p>
+      </div>
+      <div class="grid-3">
+        <article class="card">
+          <div class="icon-badge">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#c8912a" stroke-width="2" stroke-linecap="round"><path d="M4 5h16v14H4z"/><path d="M4 10h16M9 5v5"/></svg>
+          </div>
+          <h3>院线新片 <span class="tag">追新</span></h3>
+          <p>关注近期上映、讨论度高的影片。这类需求重在上映信息与版本说明，建议先看片单里的年份与地区标注，再决定是否进入播放页。</p>
+          <ul>
+            <li>按上映年份排序</li>
+            <li>留意配音与字幕版本</li>
+          </ul>
+        </article>
+        <article class="card">
+          <div class="icon-badge">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#c8912a" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="8"/><path d="M12 8v4l3 2"/></svg>
+          </div>
+          <h3>经典老片 <span class="tag">重看</span></h3>
+          <p>很多观众回到在线影院是为了重温旧作。老片的关键是片源完整度与画质，页面上会注明所属类型与时长，方便判断是否为完整版。</p>
+          <ul>
+            <li>优先看片源说明</li>
+            <li>确认是否删减</li>
+          </ul>
+        </article>
+        <article class="card">
+          <div class="icon-badge">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#c8912a" stroke-width="2" stroke-linecap="round"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8"/></svg>
+          </div>
+          <h3>剧集连载 <span class="tag">追更</span></h3>
+          <p>剧集需要按季、按集管理进度。片单中会标明集数与更新状态，观看时从上次中断的集数继续，比从头翻找更省时间。</p>
+          <ul>
+            <li>按季集结构浏览</li>
+            <li>记录已看进度</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="library" style="padding-top:0;">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>片单分类：按类型与关键词快速筛选</h2>
+        <p>下面列出的是片单归档示例，用于说明“51电影院在线观看视频”页面的分类逻辑。输入关键词或选择类型，列表会实时过滤。</p>
+      </div>
+
+      <div class="filter-box">
+        <label for="kw">关键词</label>
+        <input id="kw" type="search" placeholder="如：剧情、科幻、纪录" autocomplete="off">
+        <label for="type">类型</label>
+        <select id="type">
+          <option value="">全部类型</option>
+          <option value="剧情">剧情</option>
+          <option value="科幻">科幻</option>
+          <option value="动作">动作</option>
+          <option value="纪录">纪录</option>
+        </select>
+        <span class="filter-count">匹配 <b id="count">4</b> / 4 条</span>
+      </div>
+
+      <div class="film-list" id="films">
+        <article class="film" data-type="剧情" data-text="剧情 都市 家庭 现实题材">
+          <div class="thumb">
+            <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="#f5b94b" stroke-width="1.6"><path d="M4 5h16v14H4z"/><path d="M4 10h16M9 5v5"/></svg>
+          </div>
+          <div class="body">
+            <h4>都市剧情片单</h4>
+            <div class="meta">剧情 · 现实题材 · 长片</div>
+            <p>聚焦城市生活与家庭关系的作品集合，适合静下来完整看完一部。</p>
+          </div>
+        </article>
+        <article class="film" data-type="科幻" data-text="科幻 太空 未来 特效">
+          <div class="thumb">
+            <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="#f5b94b" stroke-width="1.6"><circle cx="12" cy="12" r="4"/><ellipse cx="12" cy="12" rx="10" ry="4.5" transform="rotate(25 12 12)"/></svg>
+          </div>
+          <div class="body">
+            <h4>科幻与未来想象</h4>
+            <div class="meta">科幻 · 太空 · 视效向</div>
+            <p>以设定与视觉见长的科幻作品，建议在较大屏幕上观看以保留画面细节。</p>
+          </div>
+        </article>
+        <article class="film" data-type="动作" data-text="动作 警匪 追逐 系列">
+          <div class="thumb">
+            <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="#f5b94b" stroke-width="1.6"><path d="M13 2 4 14h6l-1 8 9-12h-6z"/></svg>
+          </div>
+          <div class="body">
+            <h4>动作与警匪系列</h4>
+            <div class="meta">动作 · 追逐 · 系列作</div>
+            <p>节奏紧凑的动作片集合，系列作品按上映顺序排列，便于连续观看。</p>
+          </div>
+        </article>
+        <article class="film" data-type="纪录" data-text="纪录 自然 人文 短片">
+          <div class="thumb">
+            <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="#f5b94b" stroke-width="1.6"><circle cx="12" cy="12" r="8"/><path d="M12 4v16M4 12h16"/></svg>
+          </div>
+          <div class="body">
+            <h4>自然人文纪录</h4>
+            <div class="meta">纪录 · 自然 · 人文</div>
+            <p>篇幅较短、信息密度高的纪录片，适合碎片时间分集观看。</p>
+          </div>
+        </article>
+        <p class="empty" id="empty" hidden>没有匹配的片单，换个关键词试试。</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="steps" style="padding-top:0;">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>观看流程：从找片到开播的四步</h2>
+        <p>在线观看视频最常卡在“找到片却打不开”。把流程拆成四步，每一步都有明确的判断依据。</p>
+      </div>
+      <div class="steps">
+        <div class="step">
+          <h3>确定需求</h3>
+          <p>先想清楚是追新片、重温老片还是追剧，不同需求的筛选条件完全不同。</p>
+        </div>
+        <div class="step">
+          <h3>筛选片单</h3>
+          <p>用关键词与类型过滤，缩小到三到五部候选，避免在长列表中反复翻页。</p>
+        </div>
+        <div class="step">
+          <h3>核对版本</h3>
+          <p>确认时长、配音、字幕与画质标注，老片尤其要留意是否为完整版本。</p>
+        </div>
+        <div class="step">
+          <h3>进入播放</h3>
+          <p>选择线路并检查网络，播放中如遇卡顿可切换清晰度或备用线路。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section style="padding-top:0;">
+    <div class="wrap">
+      <div class="band">
+        <h2>为什么把入口集中在一页</h2>
+        <p>“51电影院在线观看视频”面向的是想快速进入观影状态的访问者。与其在多个页面间跳转，不如在一页之内完成信息核对与入口选择，减少无效点击，也让片单和流程说明始终可见。</p>
+        <div class="row">
+          <div><strong>信息集中</strong>片单、流程与问题说明在同一页面，滚动即可完成核对。</div>
+          <div><strong>筛选即时</strong>关键词与类型过滤在本地完成，无需等待页面刷新。</div>
+          <div><strong>路径清楚</strong>从指南到片单再到播放，顺序与实际操作一致。</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="faq" style="padding-top:0;">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>常见问题</h2>
+        <p>围绕在线观影时常被问到的几点，给出直接的说明。</p>
+      </div>
+
+      <details open>
+        <summary>51电影院在线观看视频需要注册吗？</summary>
+        <p>本页是主题导航页，本身不设账号体系。是否需要登录取决于实际进入的播放站点，建议先阅读该站点的说明再决定。</p>
+      </details>
+      <details>
+        <summary>片单里的影片是完整版吗？</summary>
+        <p>片单只做归档与分类，不承诺片源完整度。老片与引进片建议在播放前核对页面标注的时长与版本说明。</p>
+      </details>
+      <details>
+        <summary>播放卡顿怎么办？</summary>
+        <p>先降低清晰度，再尝试切换线路；若仍卡顿，可检查本地网络或更换设备浏览器。多数卡顿与清晰度和线路有关。</p>
+      </details>
+      <details>
+        <summary>如何快速找到想看的类型？</summary>
+        <p>使用片单上方的关键词输入框与类型下拉框，两者可叠加使用，匹配数量会实时显示。</p>
+      </details>
+      <details>
+        <summary>剧集如何接着上次的进度看？</summary>
+        <p>剧集按季集结构归档，观看时记录当前集数；再次访问时直接定位到对应季集即可，无需从头翻找。</p>
+      </details>
+      <details>
+        <summary>手机上观看体验如何？</summary>
+        <p>本页已针对小屏调整导航、字号与卡片排列，首屏优先展示主题文字与入口，竖屏下片单为单列展示。</p>
+      </details>
+    </div>
+  </section>
+
+  <section id="start" style="padding-top:0;">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>开始观看</h2>
+        <p>选好片单后即可进入下一步。下方提供片单入口与资料下载入口，方便留存分类说明。</p>
+      </div>
+      <div class="grid-2">
+        <article class="card">
+          <h3>进入片单分类</h3>
+          <p>按类型与关键词浏览归档片单，找到候选影片后再核对版本信息。</p>
+          <div style="margin-top:16px;">
+            <a class="btn btn-gold" href="#library">浏览片单分类</a>
+          </div>
+        </article>
+        <article class="card">
+          <h3>下载片单说明</h3>
+          <p>包含分类维度与选片要点的说明文件，便于离线查阅与整理自己的观影清单。</p>
+          <div style="margin-top:16px;">
+            <a class="btn btn-ghost" style="border-color:#e2dcd2;color:#41505f;" href="#" data-download-placeholder="true" aria-disabled="true" tabindex="-1">下载</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="frow">
+      <div>
+        <div class="fbrand">
+          <svg width="22" height="22" viewBox="0 0 64 64" aria-hidden="true">
+            <rect width="64" height="64" rx="14" fill="#1e2b39"/>
+            <circle cx="32" cy="32" r="17" fill="none" stroke="#f5b94b" stroke-width="4"/>
+            <path d="M27 24 L44 32 L27 40 Z" fill="#f5b94b"/>
+          </svg>
+          51电影院在线观看视频
+        </div>
+        <p style="max-width:30em;">围绕在线观影需求整理的影视资源导航主题首页，提供片单分类、观看流程与常见问题说明。</p>
+      </div>
+      <div>
+        <div class="fnav">
+          <a href="#guide">观影指南</a>
+          <a href="#library">片单分类</a>
+          <a href="#steps">观看流程</a>
+          <a href="#faq">常见问题</a>
+          <a href="#start">开始观看</a>
+        </div>
+      </div>
+    </div>
+    <div class="copy">页面内容为影视资源导航与观影流程说明，片源与播放服务以实际进入的站点为准。</div>
+  </div>
+</footer>
+
+<script>
+  (function(){
+    var kw = document.getElementById('kw');
+    var type = document.getElementById('type');
+    var films = Array.prototype.slice.call(document.querySelectorAll('#films .film'));
+    var count = document.getElementById('count');
+    var empty = document.getElementById('empty');
+
+    function apply(){
+      var k = kw.value.trim().toLowerCase();
+      var t = type.value;
+      var shown = 0;
+      films.forEach(function(f){
+        var okType = !t || f.getAttribute('data-type') === t;
+        var text = (f.getAttribute('data-text') + ' ' + f.textContent).toLowerCase();
+        var okKw = !k || text.indexOf(k) > -1;
+        var show = okType && okKw;
+        f.hidden = !show;
+        if(show) shown++;
+      });
+      count.textContent = shown;
+      empty.hidden = shown !== 0;
+    }
+
+    kw.addEventListener('input', apply);
+    type.addEventListener('change', apply);
+  })();
+</script>
+
+</body>
+</html>
