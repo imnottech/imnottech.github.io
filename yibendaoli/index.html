@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>一本道理乱码高清在线观看高速-乱码原因排查_高清画质设置_在线观看高速播放方法</title>
+<meta name="description" content="一本道理乱码高清在线观看高速使用说明：整理乱码出现原因、高清画质与播放缓存设置、在线观看高速播放的排查顺序，帮助访问者按步骤定位问题并改善观看体验。">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%231c2b4a'/%3E%3Cpath d='M16 20h32v6H16zM16 32h22v6H16zM16 44h28v6H16z' fill='%23f2c14e'/%3E%3Ccircle cx='48' cy='35' r='6' fill='%2356c8b0'/%3E%3C/svg%3E">
+<style>
+:root{
+  --ink:#1c2b4a;
+  --ink-soft:#3c4d6e;
+  --paper:#f7f5f0;
+  --card:#ffffff;
+  --line:#e2ded4;
+  --gold:#f2c14e;
+  --teal:#2f8f7d;
+  --teal-soft:#e6f2ef;
+  --radius:14px;
+}
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  margin:0;
+  background:var(--paper);
+  color:var(--ink);
+  font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Source Han Sans SC",system-ui,sans-serif;
+  font-size:16px;
+  line-height:1.8;
+  -webkit-font-smoothing:antialiased;
+}
+a{color:var(--teal);text-decoration:none;}
+a:hover{text-decoration:underline;}
+h1,h2,h3{line-height:1.35;margin:0;font-weight:700;}
+.wrap{width:100%;max-width:1080px;margin:0 auto;padding:0 20px;}
+
+/* header */
+.site-header{
+  background:var(--ink);
+  color:#fff;
+  border-bottom:3px solid var(--gold);
+}
+.header-inner{
+  display:flex;flex-wrap:wrap;gap:14px 28px;
+  align-items:center;justify-content:space-between;
+  padding:16px 20px;max-width:1080px;margin:0 auto;
+}
+.logo{display:flex;align-items:center;gap:12px;min-width:0;}
+.logo-mark{flex:0 0 auto;width:42px;height:42px;border-radius:10px;background:rgba(242,193,78,.14);display:flex;align-items:center;justify-content:center;}
+.logo-text{
+  font-size:clamp(15px,2.4vw,19px);
+  font-weight:700;letter-spacing:.5px;color:#fff;
+  word-break:break-all;
+}
+.main-nav{display:flex;flex-wrap:wrap;gap:6px 18px;font-size:14.5px;}
+.main-nav a{color:#d8e0ef;padding:4px 0;border-bottom:2px solid transparent;}
+.main-nav a:hover,.main-nav a:focus-visible{color:#fff;border-bottom-color:var(--gold);text-decoration:none;}
+
+/* hero */
+.hero{
+  background:
+    radial-gradient(circle at 88% 12%,rgba(242,193,78,.20),transparent 42%),
+    linear-gradient(160deg,#24365c 0%,#1c2b4a 100%);
+  color:#fff;
+  padding:52px 0 56px;
+}
+.hero-grid{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,.9fr);gap:40px;align-items:center;}
+.hero h1{
+  font-size:clamp(24px,3.6vw,38px);
+  letter-spacing:.5px;
+  word-break:break-all;
+  margin-bottom:18px;
+}
+.hero p{color:#cdd7e8;font-size:16px;margin:0 0 16px;max-width:34em;}
+.hero-tags{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 26px;padding:0;list-style:none;}
+.hero-tags li{
+  font-size:13px;color:#e9eef8;background:rgba(255,255,255,.09);
+  border:1px solid rgba(255,255,255,.16);border-radius:999px;padding:3px 12px;
+}
+.hero-actions{display:flex;flex-wrap:wrap;gap:12px;align-items:center;}
+.btn{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:11px 22px;border-radius:999px;font-size:15px;font-weight:600;
+  border:1px solid transparent;cursor:pointer;
+}
+.btn-primary{background:var(--gold);color:#2a2313;}
+.btn-primary:hover{background:#f7cf6c;text-decoration:none;}
+.btn-ghost{background:transparent;color:#fff;border-color:rgba(255,255,255,.4);}
+.btn-ghost:hover{border-color:#fff;text-decoration:none;}
+.btn-disabled{
+  background:rgba(255,255,255,.14);color:#f0f3f8;border-color:rgba(255,255,255,.28);
+  pointer-events:none;
+}
+.hero-visual{position:relative;}
+.screen-art{width:100%;height:auto;display:block;border-radius:12px;}
+
+/* sections */
+.section{padding:54px 0;}
+.section-head{max-width:44em;margin-bottom:30px;}
+.kicker{
+  display:inline-block;font-size:13px;font-weight:700;letter-spacing:2px;
+  color:var(--teal);margin-bottom:10px;
+}
+.section-head h2{font-size:clamp(20px,2.7vw,27px);margin-bottom:12px;}
+.section-head p{color:var(--ink-soft);margin:0;}
+.band{background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
+
+/* cards */
+.card-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;}
+.card{
+  background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+  padding:24px 22px;display:flex;flex-direction:column;gap:10px;
+}
+.card .num{
+  font-size:13px;font-weight:700;color:var(--teal);
+  background:var(--teal-soft);border-radius:6px;padding:2px 9px;align-self:flex-start;
+}
+.card h3{font-size:17px;}
+.card p{margin:0;color:var(--ink-soft);font-size:15px;}
+
+/* steps */
+.steps{list-style:none;margin:0;padding:0;display:grid;gap:0;}
+.steps li{
+  display:grid;grid-template-columns:56px minmax(0,1fr);gap:18px;
+  padding:20px 0;border-bottom:1px dashed var(--line);
+}
+.steps li:last-child{border-bottom:none;}
+.step-idx{
+  width:44px;height:44px;border-radius:50%;background:var(--ink);color:var(--gold);
+  display:flex;align-items:center;justify-content:center;font-weight:700;font-size:17px;
+}
+.steps h3{font-size:16.5px;margin-bottom:4px;}
+.steps p{margin:0;color:var(--ink-soft);font-size:15px;}
+
+/* two column */
+.split{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:34px;align-items:start;}
+.panel{
+  background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+  padding:26px 24px;
+}
+.panel h3{font-size:17px;margin-bottom:12px;}
+.checklist{list-style:none;margin:0;padding:0;font-size:15px;color:var(--ink-soft);}
+.checklist li{position:relative;padding-left:24px;margin-bottom:9px;}
+.checklist li::before{
+  content:"";position:absolute;left:0;top:9px;width:9px;height:9px;
+  border-radius:2px;background:var(--gold);
+}
+.note{
+  margin-top:18px;font-size:13.5px;color:#6b7385;
+  border-left:3px solid var(--teal);padding-left:12px;line-height:1.7;
+}
+
+/* table */
+.table-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:var(--radius);background:#fff;}
+table{width:100%;border-collapse:collapse;font-size:14.5px;min-width:520px;}
+th,td{text-align:left;padding:13px 16px;border-bottom:1px solid var(--line);vertical-align:top;}
+th{background:#f2f0ea;font-weight:700;color:var(--ink);white-space:nowrap;}
+tbody tr:last-child td{border-bottom:none;}
+td{color:var(--ink-soft);}
+
+/* faq */
+.faq{display:grid;gap:12px;}
+details{
+  background:#fff;border:1px solid var(--line);border-radius:10px;
+  padding:14px 18px;
+}
+details[open]{border-color:#cfd8d4;box-shadow:0 2px 10px rgba(28,43,74,.05);}
+summary{
+  cursor:pointer;font-weight:600;font-size:15.5px;color:var(--ink);
+  list-style:none;display:flex;justify-content:space-between;gap:14px;align-items:flex-start;
+}
+summary::-webkit-details-marker{display:none;}
+summary::after{content:"＋";color:var(--teal);font-weight:700;flex:0 0 auto;}
+details[open] summary::after{content:"－";}
+details p{margin:10px 0 0;color:var(--ink-soft);font-size:15px;}
+
+/* closing */
+.closing{
+  background:var(--ink);color:#e7ecf6;border-radius:var(--radius);
+  padding:36px 30px;display:flex;flex-wrap:wrap;gap:22px 34px;
+  align-items:center;justify-content:space-between;
+}
+.closing h2{font-size:clamp(18px,2.4vw,23px);color:#fff;margin-bottom:8px;}
+.closing p{margin:0;font-size:15px;color:#c3cfe3;max-width:36em;}
+
+/* footer */
+.site-footer{background:#16223c;color:#a9b6cd;padding:34px 0 26px;font-size:14px;}
+.footer-inner{display:grid;gap:18px;}
+.footer-brand{display:flex;align-items:center;gap:10px;color:#fff;font-weight:700;font-size:15px;word-break:break-all;}
+.footer-links{display:flex;flex-wrap:wrap;gap:8px 20px;}
+.footer-links a{color:#c3cfe3;}
+.footer-copy{border-top:1px solid rgba(255,255,255,.12);padding-top:16px;font-size:13px;color:#8494b0;}
+
+@media (max-width:860px){
+  .hero-grid{grid-template-columns:1fr;}
+  .hero-visual{order:-1;max-width:420px;}
+  .card-grid{grid-template-columns:1fr;}
+  .split{grid-template-columns:1fr;}
+  .hero{padding:36px 0 42px;}
+  .section{padding:40px 0;}
+}
+@media (max-width:520px){
+  .header-inner{padding:13px 16px;}
+  .main-nav{width:100%;font-size:14px;gap:4px 14px;}
+  .steps li{grid-template-columns:40px minmax(0,1fr);gap:12px;}
+  .step-idx{width:36px;height:36px;font-size:15px;}
+  .closing{padding:26px 20px;}
+  body{font-size:15.5px;}
+}
+</style>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-inner">
+    <div class="logo">
+      <span class="logo-mark" aria-hidden="true">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+          <rect x="2.5" y="4" width="19" height="12" rx="2" stroke="#f2c14e" stroke-width="1.8"/>
+          <path d="M6 8h7M6 11.5h10" stroke="#f2c14e" stroke-width="1.6" stroke-linecap="round"/>
+          <path d="M9 20h6" stroke="#56c8b0" stroke-width="1.8" stroke-linecap="round"/>
+          <path d="M12 16v4" stroke="#56c8b0" stroke-width="1.8" stroke-linecap="round"/>
+        </svg>
+      </span>
+      <span class="logo-text">一本道理乱码高清在线观看高速</span>
+    </div>
+    <nav class="main-nav" aria-label="主导航">
+      <a href="#why">乱码成因</a>
+      <a href="#steps">排查顺序</a>
+      <a href="#quality">画质与缓存</a>
+      <a href="#compare">现象对照</a>
+      <a href="#faq">常见问答</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <h1>一本道理乱码高清在线观看高速</h1>
+      <p>当页面文字出现乱码、画面停留在低清晰度，或者播放总是卡在缓冲阶段时，问题往往来自编码、画质档位与网络缓存三处。本页围绕「一本道理乱码高清在线观看高速」整理成因与排查顺序，让访问者可以按条目逐项核对，而不是反复刷新碰运气。</p>
+      <ul class="hero-tags">
+        <li>字符编码核对</li>
+        <li>高清档位设置</li>
+        <li>缓冲与预加载</li>
+        <li>播放顺序自查</li>
+      </ul>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#steps">查看排查顺序</a>
+        <a class="btn btn-ghost" href="#quality">画质与缓存说明</a>
+        <a class="btn btn-disabled" href="#" data-download-placeholder="true" aria-disabled="true" tabindex="-1">下载</a>
+      </div>
+    </div>
+    <div class="hero-visual" aria-hidden="true">
+      <svg class="screen-art" viewBox="0 0 420 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="播放界面与编码检测示意图">
+        <defs>
+          <linearGradient id="scr" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#2f4570"/>
+            <stop offset="1" stop-color="#233355"/>
+          </linearGradient>
+        </defs>
+        <rect x="18" y="22" width="384" height="212" rx="14" fill="url(#scr)" stroke="#4c628f" stroke-width="1.5"/>
+        <rect x="40" y="46" width="140" height="12" rx="6" fill="#f2c14e" opacity=".85"/>
+        <rect x="40" y="70" width="220" height="9" rx="4.5" fill="#8fa3c8" opacity=".7"/>
+        <rect x="40" y="88" width="184" height="9" rx="4.5" fill="#8fa3c8" opacity=".5"/>
+        <rect x="40" y="112" width="112" height="9" rx="4.5" fill="#56c8b0" opacity=".8"/>
+        <rect x="252" y="46" width="126" height="82" rx="8" fill="#1a2743" stroke="#4c628f" stroke-width="1.2"/>
+        <path d="M296 74l22 13-22 13z" fill="#f2c14e"/>
+        <rect x="40" y="150" width="338" height="8" rx="4" fill="#16223c"/>
+        <rect x="40" y="150" width="196" height="8" rx="4" fill="#56c8b0"/>
+        <circle cx="236" cy="154" r="7" fill="#f2c14e"/>
+        <rect x="40" y="176" width="60" height="26" rx="7" fill="#33496f"/>
+        <rect x="110" y="176" width="60" height="26" rx="7" fill="#33496f"/>
+        <rect x="180" y="176" width="88" height="26" rx="7" fill="#2f8f7d"/>
+        <rect x="18" y="248" width="384" height="34" rx="10" fill="#ffffff" opacity=".08"/>
+        <text x="40" y="270" font-family="PingFang SC,Microsoft YaHei,sans-serif" font-size="13" fill="#cdd7e8">编码 · 画质 · 缓冲</text>
+        <circle cx="368" cy="265" r="6" fill="#56c8b0"/>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<main>
+
+  <section class="section" id="why">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="kicker">成因</span>
+        <h2>乱码通常不是单一问题</h2>
+        <p>看到「一本道理乱码高清在线观看高速」中的乱码现象时，先分清它属于文字显示异常还是画面与播放异常。两类问题的排查路径不同，混在一起处理容易把简单问题拖长。</p>
+      </div>
+      <div class="card-grid">
+        <article class="card">
+          <span class="num">01</span>
+          <h3>字符编码不一致</h3>
+          <p>页面声明的字符集与内容实际保存的编码不匹配时，中文会显示为方块、问号或一段无意义符号。这类乱码在页面标题、正文段落中同时出现，刷新通常不会自行恢复。</p>
+        </article>
+        <article class="card">
+          <span class="num">02</span>
+          <h3>字体缺失或替换</h3>
+          <p>设备缺少所需字体时，系统会用默认字体替代，个别字词显示成占位方框。与编码乱码的区别是：只有部分生僻字异常，其余中文显示正常。</p>
+        </article>
+        <article class="card">
+          <span class="num">03</span>
+          <h3>画质未切到高清</h3>
+          <p>播放器默认沿用较低清晰度以节省流量，画面偏糊并非故障。手动选择高清档位后，清晰度才会随网络状况逐步提升，这一过程需要几秒到十几秒。</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section band" id="steps">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="kicker">顺序</span>
+        <h2>从编码到播放的四步自查</h2>
+        <p>按由轻到重的顺序处理，多数情况下前两步就能解决「一本道理乱码高清在线观看高速」相关的显示与清晰度问题，无需改动设备设置。</p>
+      </div>
+      <ol class="steps">
+        <li>
+          <span class="step-idx">1</span>
+          <div>
+            <h3>确认页面字符集声明</h3>
+            <p>查看页面头部是否声明了 UTF-8 字符集，并确认内容文件确实以同一编码保存。声明与文件编码一致时，中文标题和正文一般不会出现乱码。</p>
+          </div>
+        </li>
+        <li>
+          <span class="step-idx">2</span>
+          <div>
+            <h3>检查浏览器与设备字体</h3>
+            <p>换一个浏览器打开同一页面，若乱码消失，说明问题在字体或本地设置；若仍存在，则更可能出在编码环节，回到第一步核对。</p>
+          </div>
+        </li>
+        <li>
+          <span class="step-idx">3</span>
+          <div>
+            <h3>手动切换高清画质</h3>
+            <p>在播放器设置中选择高清档位，观察画面是否在短时间内变得清晰。网络带宽不足时，播放器可能自动回落，此时应先处理网络再调画质。</p>
+          </div>
+        </li>
+        <li>
+          <span class="step-idx">4</span>
+          <div>
+            <h3>清理缓存后重新载入</h3>
+            <p>旧缓存可能保留了错误的编码或低画质配置。清理浏览器缓存并重新载入页面，能让播放器重新协商画质与加载策略。</p>
+          </div>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="section" id="quality">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="kicker">设置</span>
+        <h2>高清画质与高速播放的实际条件</h2>
+        <p>「高清」和「高速」并不是两个独立开关，它们共同依赖带宽、缓存策略与播放器设置。理解这三者的关系，比反复刷新更有效。</p>
+      </div>
+      <div class="split">
+        <div class="panel">
+          <h3>影响流畅度的三个因素</h3>
+          <ul class="checklist">
+            <li>带宽余量：高清流对带宽要求更高，同时开多个标签页会分摊带宽。</li>
+            <li>预加载缓冲：播放前留出数秒缓冲，可减少播放中反复停顿。</li>
+            <li>后台进程：其他设备或程序占用网络时，画质与速度会同时下降。</li>
+          </ul>
+          <p class="note">以上为一般性排查思路，实际表现取决于设备性能、网络环境与播放器版本，不同条件下结果可能不同。</p>
+        </div>
+        <div class="panel">
+          <h3>建议的操作次序</h3>
+          <ul class="checklist">
+            <li>先关闭其他占用带宽的标签页与下载任务。</li>
+            <li>将播放器画质固定为高清，避免自动回落。</li>
+            <li>等待缓冲进度领先播放进度后再继续观看。</li>
+            <li>若仍卡顿，改为清理缓存后重新载入页面。</li>
+          </ul>
+          <p class="note">按上述次序操作后仍无改善，通常说明当前网络条件不足以稳定承载高清档位，可先退回较低画质确认播放是否正常。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section band" id="compare">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="kicker">对照</span>
+        <h2>常见现象与对应处理</h2>
+        <p>把看到的现象与下表对照，可以更快判断问题落在编码、画质还是网络环节，避免在无关选项上反复尝试。</p>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th scope="col">现象</th>
+              <th scope="col">可能环节</th>
+              <th scope="col">处理方式</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>标题与正文同时出现方块或问号</td>
+              <td>字符编码不一致</td>
+              <td>核对字符集声明与文件保存编码</td>
+            </tr>
+            <tr>
+              <td>仅个别字词显示异常</td>
+              <td>字体缺失</td>
+              <td>更换浏览器或补充所需字体</td>
+            </tr>
+            <tr>
+              <td>画面偏糊但播放连续</td>
+              <td>画质档位偏低</td>
+              <td>手动切换为高清档位</td>
+            </tr>
+            <tr>
+              <td>频繁停顿、缓冲圈反复出现</td>
+              <td>带宽或缓存</td>
+              <td>关闭占用带宽的任务并清理缓存</td>
+            </tr>
+            <tr>
+              <td>切换画质后自动回落</td>
+              <td>网络条件不足</td>
+              <td>先退回较低画质确认播放正常</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="faq">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="kicker">问答</span>
+        <h2>关于乱码、高清与速度的常见疑问</h2>
+        <p>以下问答围绕「一本道理乱码高清在线观看高速」整理，回答保持通用排查范围，不承诺特定设备或网络下的固定结果。</p>
+      </div>
+      <div class="faq">
+        <details>
+          <summary>刷新页面后乱码仍然存在，是什么原因？</summary>
+          <p>若乱码由编码不一致引起，刷新不会改变结果，因为问题出在文件保存方式而非加载过程。应核对页面字符集声明与文件实际编码是否匹配。</p>
+        </details>
+        <details>
+          <summary>为什么画质设置为高清后画面没有立刻变清晰？</summary>
+          <p>切换画质需要重新缓冲对应清晰度的片段，通常需要数秒到十几秒。若网络带宽不足，播放器也可能在稍后自动回落到较低档位。</p>
+        </details>
+        <details>
+          <summary>清理缓存会影响观看记录吗？</summary>
+          <p>清理浏览器缓存主要移除临时文件，可能同时清除部分本地保存的播放偏好。若在意设置，可在清理前记录当前的画质选项。</p>
+        </details>
+        <details>
+          <summary>多台设备同时在线会影响高速播放吗？</summary>
+          <p>会。同一网络下多设备并发播放或下载会分摊带宽，高清档位对带宽更敏感，通常表现为缓冲时间变长或画质自动下调。</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="closing">
+        <div>
+          <h2>按顺序排查，比反复刷新更省时间</h2>
+          <p>编码、画质、缓存三层逐一核对，就能覆盖「一本道理乱码高清在线观看高速」中的大部分显示与播放问题。遇到新现象时，可回到对照表确认环节，再执行对应处理。</p>
+        </div>
+        <a class="btn btn-primary" href="#why">回到成因说明</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap footer-inner">
+    <div class="footer-brand">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+        <rect x="2.5" y="4" width="19" height="12" rx="2" stroke="#f2c14e" stroke-width="1.8"/>
+        <path d="M9 20h6" stroke="#56c8b0" stroke-width="1.8" stroke-linecap="round"/>
+        <path d="M12 16v4" stroke="#56c8b0" stroke-width="1.8" stroke-linecap="round"/>
+      </svg>
+      <span>一本道理乱码高清在线观看高速</span>
+    </div>
+    <nav class="footer-links" aria-label="页尾导航">
+      <a href="#why">乱码成因</a>
+      <a href="#steps">排查顺序</a>
+      <a href="#quality">画质与缓存</a>
+      <a href="#compare">现象对照</a>
+      <a href="#faq">常见问答</a>
+    </nav>
+    <div class="footer-copy">
+      本页为「一本道理乱码高清在线观看高速」主题的排查说明首页，内容为通用性的编码、画质与缓存处理思路，实际效果受设备与网络条件影响。
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
